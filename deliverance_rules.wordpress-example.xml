@@ -1,0 +1,14 @@
+<ruleset>
+  <theme href="%s" />
+  <!-- These are the default rules for anything with class="default" or no class: -->
+  <!-- suppress standard behaviour of copying over head stuff links, html, css
+  etc
+  <rule suppress-standard="1"> 
+  -->
+  <rule>
+      <replace content="children:/html/head/title" theme="children:/html/head/title" nocontent="ignore" />
+
+    <replace content="children:#content" theme="children:#content" />
+    <append content="children:#primary .xoxo" theme="children:#primary .xoxo" />
+  </rule>
+</ruleset>

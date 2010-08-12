@@ -1,0 +1,10 @@
+<ruleset>
+  <theme href="%s" />
+  <rule suppress-standard="1" /> 
+  <rule>
+      <replace content="children:/html/head/title" theme="children:/html/head/title" nocontent="ignore" />
+
+    <replace content="children:#content" theme="children:#content" />
+    <append content="children:#primary" theme="children:#primary" />
+  </rule>
+</ruleset>

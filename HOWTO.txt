@@ -1,0 +1,34 @@
+
+What is ckanext.deliverance? 
+============================
+
+Deliverance is an HTTP proxy that can be used to request and render web pages from an external 
+site (e.g. a CMS like Drupal, Wordpress). Pages will be loaded from the CMS url, re-styled 
+according to a XML specification and delivered to the end user. This allows CKAN to provide 
+CMS-managed content pages without the need to include CMS functionality.
+
+
+Setup
+-----
+
+1. Install ckanextdeliverance from mercurial using pip -e. 
+2. Add the following entries to your CKAN .ini file::
+
+    ckan.plugins = deliverance
+    deliverance.base = http://your_cms_url/
+    deliverance.rules = %(here)s/deliverance_rules.xml
+    
+  There are also two optional settings::
+  
+    # will add trailing slashes to all requests if necessary:
+    deliverance.add_slash = true 
+    
+    # will replace each occurence of ``deliverance.base`` with 
+    # CKAN's ``ckan.site_url``:
+    deliverance.replace_url = true
+    
+3. Set up a deliverance rules file. This file specified transformation and replacement rules
+   that are needed to copy the CMS page contents into CKANs layout. Two very simple examples
+   can be found in the ckanextdeliverance repository, while a documentation of the XML 
+   format is at: http://packages.python.org/Deliverance/configuration.html
+    
