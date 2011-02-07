@@ -3,7 +3,7 @@ import sys, os
 
 version = '0.1'
 
-setup(name='ckanextdeliverance',
+setup(name='ckanext-deliverance',
       version=version,
       description="CKAN Deliverance Proxy",
       long_description="""Allow using CKAN to proxy CMS content""",
@@ -23,6 +23,6 @@ setup(name='ckanextdeliverance',
       entry_points="""
       # -*- Entry points: -*-
       [ckan.plugins]
-      deliverance = ckanext.deliverance:DeliverancePlugin
+      deliverance = ckanext.deliverance:DeliveranceRoutes
       """,
       )
